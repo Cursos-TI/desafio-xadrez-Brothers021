@@ -14,7 +14,7 @@ void bispo(int linha, int coluna) {
     int i = 1;
     while (i <= 5)
     {
-        printf("(%d, %d)\n", linha - i, coluna + i);
+        printf ("cima, direita\n", linha - i, coluna + i);
         i++;
     }
 }
@@ -24,7 +24,7 @@ void bispo(int linha, int coluna) {
     
     do
     {
-        printf("%d\n", linha - i);
+        printf("esquerda\n", linha - i);
         i++;
     } while (i <= 8);
     
