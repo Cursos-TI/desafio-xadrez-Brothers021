@@ -12,9 +12,9 @@ void torre(int linha, int coluna) {
 void bispo(int linha, int coluna) {
 // move o bispo 5 casas em diagonal
     int i = 1;
-    while (1 <= 5);
+    while (i <= 5)
     {
-        printf ("%d\n", linha - i,);
+        printf("(%d, %d)\n", linha - i, coluna + i);
         i++;
     }
 }
@@ -30,31 +30,32 @@ void bispo(int linha, int coluna) {
     
  } // criando a chamada para o usuario 
 int main(){
-    int linha, opcao;
-
-    printf("Digite a linha inicial (0 a 7): ");
-    scanf("%d", &linha);
-
+    int linha, coluna, opcao;
+// entrada de dados 
     printf("\n Escolha a peça:\n");
     printf("1 - torre\n");
     printf("2 - bispo\n");
     printf("3- rainha\n");
     printf("Opção: ");
-    scanf("%d", opcao);
+    scanf("%d", &opcao);
 
     // Movimentos
     printf("\nMovimentos possíveis:\n");
 
     switch (opcao)
     {
-    case constant expression:
-        /* code */
+    case 1:
+        torre (linha, coluna);
         break;
-    
+    case 2:
+        bispo (linha, coluna);
+        break;
+    case 3: rainha (linha);
+    break;
     default:
-        break;
+        printf("Opção invalida!\n");
     }
 
-
+return 0;
 }
 
