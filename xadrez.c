@@ -43,6 +43,17 @@ int main(){
     scanf("%d", opcao);
 
     // Movimentos
+    printf("\nMovimentos possíveis:\n");
+
+    switch (opcao)
+    {
+    case constant expression:
+        /* code */
+        break;
+    
+    default:
+        break;
+    }
 
 
 }
