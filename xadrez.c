@@ -32,7 +32,17 @@ void bispo(int linha, int coluna) {
 int main(){
     int linha, opcao;
 
-    printf("Digite a linha ")
+    printf("Digite a linha inicial (0 a 7): ");
+    scanf("%d", &linha);
+
+    printf("\n Escolha a peça:\n");
+    printf("1 - torre\n");
+    printf("2 - bispo\n");
+    printf("3- rainha\n");
+    printf("Opção: ");
+    scanf("%d", opcao);
+
+    // Movimentos
 
 
 }
