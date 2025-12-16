@@ -14,7 +14,7 @@ void bispo(int linha, int coluna) {
     int i = 1;
     while (i <= 5)
     {
-        printf ("cima, direita\n", linha - i, coluna + i);
+        printf ("cima, direita\n");
         i++;
     }
 }
