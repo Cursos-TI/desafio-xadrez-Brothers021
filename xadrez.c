@@ -1,14 +1,39 @@
 #include <stdio.h>
 
-
-int main() {
-// é para mover a torre 5 casas para a direita 
-    printf ("<<<< Desafio Xadrez >>>>\n");
-   
-for ( int i = 0; i < 5; i++)
-{
-    printf("Direita\n" ); // vai aparecer para qual lado a peça vai
+void torre(int linha, int coluna) {
+    // move a torre 5 casas para direita
+    for (int i = 0; i < 5; i++)
+    {
+        printf("Direita\n");
+    }
+    
 }
 
-    return 0;
+void bispo(int linha, int coluna) {
+// move o bispo 5 casas em diagonal
+    int i = 1;
+    while (1 <= 5);
+    {
+        printf ("%d\n", linha - i,);
+        i++;
+    }
 }
+ void rainha(int linha) {
+    // anda 8 casas para a esquerda 
+    int i = 1;
+    
+    do
+    {
+        printf("%d\n", linha - i);
+        i++;
+    } while (i <= 8);
+    
+ } // criando a chamada para o usuario 
+int main(){
+    int linha, opcao;
+
+    printf("Digite a linha ")
+
+
+}
+
