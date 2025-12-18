@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void torre(int linha, int coluna) {
+int torre(int linha, int coluna) { 
     // move a torre 5 casas para direita
     for (int i = 0; i < 5; i++)
     {
@@ -9,7 +9,7 @@ void torre(int linha, int coluna) {
     
 }
 
-void bispo(int linha, int coluna) {
+int bispo(int linha, int coluna) {
 // move o bispo 5 casas em diagonal
     int i = 1;
     while (i <= 5)
@@ -18,24 +18,41 @@ void bispo(int linha, int coluna) {
         i++;
     }
 }
- void rainha(int linha) {
+int rainha(int linha) {
     // anda 8 casas para a esquerda 
     int i = 1;
     
     do
     {
-        printf("esquerda\n", linha - i);
+        printf("esquerda\n");
         i++;
     } while (i <= 8);
-    
- } // criando a chamada para o usuario 
+}
+
+int cavalo(int linha, int coluna) { 
+    int movimentocompleto = 1;
+
+    while (movimentocompleto--)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            linha --;
+            printf("Cima\n");
+        }
+        coluna++;
+        printf("direita\n");
+    }
+ }
+ 
+// criando a chamada para o usuario 
 int main(){
     int linha, coluna, opcao;
 // entrada de dados 
     printf("\n Escolha a peça:\n");
-    printf("1 - torre\n");
-    printf("2 - bispo\n");
-    printf("3- rainha\n");
+    printf("1 - Torre\n");
+    printf("2 - Bispo\n");
+    printf("3 - Rainha\n");
+    printf("4 - Cavalo\n");
     printf("Opção: ");
     scanf("%d", &opcao);
 
@@ -45,12 +62,14 @@ int main(){
     switch (opcao)
     {
     case 1:
-        torre (linha, coluna);
+            torre (linha, coluna);
         break;
     case 2:
-        bispo (linha, coluna);
+            bispo (linha, coluna);
         break;
     case 3: rainha (linha);
+    break;
+    case 4: cavalo (linha, coluna);
     break;
     default:
         printf("Opção invalida!\n");
