@@ -29,17 +29,17 @@ int rainha(int linha) {
     } while (i <= 8);
 }
 
-int cavalo(int linha, int coluna) { 
-    int movimentocompleto = 1;
+int cavalo(int linha, int coluna) { // função para movimentar o cavalo
+    int movimentocompleto = 1; 
 
-    while (movimentocompleto--)
+    while (movimentocompleto--) // repete o moviemnto para cima
     {
         for (int i = 0; i < 2; i++)
         {
-            linha --;
+            linha --; // sobe a linha (linha - 1)
             printf("Cima\n");
         }
-        coluna++;
+        coluna++; // vai para a direita (coluna + 1)
         printf("direita\n");
     }
  }
