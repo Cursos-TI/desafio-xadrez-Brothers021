@@ -52,7 +52,7 @@ int main() {
     int opcao;
     int torre = 5;
     int bispo = 2;
-    int rainha = 4;
+    int rainha = 8;
     int cavalo = 2;
     
     do { 
