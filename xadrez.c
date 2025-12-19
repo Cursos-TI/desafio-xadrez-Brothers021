@@ -1,66 +1,74 @@
 #include <stdio.h>
 
-void torre(int casas) { 
+void movertorre(int casas) { 
     // função recursiva 
     if (casas > 0)
     {
         printf("Direita\n");  // movimentação da torre
-        torre(casas - 1); 
+        movertorre(casas - 1); 
     }
     
 }
 
-void bispo(int casas) { // função recursiva do bispo 
-// move o bispo 5 casas em diagonal
-    if (casas > 0)
-    { // loop externo 
-     for(int i = 0; i < casas; i++){
-        printf("Cima\n"); // move para cima
-
-        for (int j = 0; j < casas; j++)// loop interno 
-        {
-            printf("Direita\n"); //movimento para o lado 
+void moverbispo(int casas) {
+    if (casas > 0) {
+        // loop externo: controla o movimento vertical
+        for (int i = 0; i < casas; i++) {
+            printf("Cima\n");
+            
+            // loop interno: controla o movimento horizontal
+            for (int j = 0; j < 1; j++) {  
+                printf("Direita\n");
+            }
         }
-        
-     }
+        // chamada recursiva para reduzir casas
+        moverbispo(casas - 1);
     }
-    
+}
 
-
-void rainha(int casas) { // funçao recursiva para movimentar a rainha 
+void moverrainha(int casas) { // funçao recursiva para movimentar a rainha 
     // anda 8 casas para Cima
    if (casas > 0)
    {
     printf("Cima\n");
-    torre(casas - 1);
+    moverrainha(casas - 1);
    }
    
 }
 
-void cavalo(int linha, int coluna) { // função para movimentar o cavalo
-    int movimentocompleto = 1; 
-
-    while (movimentocompleto--) // repete o moviemnto para cima
+void movercavalo(int movimentos) { // função para movimentar o cavalo
+    for (int i = 0; i < movimentos; i++)
     {
-        for (int i = 0; i < 2; i++)
+        for (int j = 0; j < movimentos; j++)
         {
-            linha --; // sobe a linha (linha - 1)
+            if (i == j ) continue; // faz pular a contagem quando i for igual "==" j 
+            
+            if (i + j > movimentos) break; // faz parar quando a soma passa do limite 
             printf("Cima\n");
+            printf("Cima\n");  // vai aprecer o movimento da peça 
+            printf("Direita\n");
         }
-        coluna++; // vai para a direita (coluna + 1)
-        printf("direita\n");
+        
     }
+    
  }
- 
-// criando a chamada para o usuario 
+  
 int main(){
-    int linha, coluna, opcao;
-// entrada de dados 
+    int opcao;
+    int torre = 5;
+    int bispo = 2;
+    int rainha = 4;
+    int cavalo = 2;
+    
+    do
+    { 
+        // aparecer as opções para escolher 
     printf("\n Escolha a peça:\n");
     printf("1 - Torre\n");
     printf("2 - Bispo\n");
     printf("3 - Rainha\n");
     printf("4 - Cavalo\n");
+    printf("0 - Sair\n");
     printf("Opção: ");
     scanf("%d", &opcao);
 
@@ -70,18 +78,31 @@ int main(){
     switch (opcao)
     {
     case 1:
-            torre (linha, coluna);
+            printf("\nMovimento da torre:\n");
+            movertorre(torre);
+            printf("\n");
         break;
     case 2:
-            bispo (linha, coluna);
+            printf("\nMovimento da bispo:\n");
+            moverbispo(bispo);
+            printf("\n");
         break;
-    case 3: rainha (linha);
+    case 3: printf("\nMovimento da rainha:\n");
+            moverrainha(rainha);
+            printf("\n");
     break;
-    case 4: cavalo (linha, coluna);
+    case 4: printf("\nMovimento da cavalo:\n");
+            movercavalo(cavalo);
+            printf("\n");
+    break;
+    case 0: 
+    printf("Saindo...\n");
     break;
     default:
         printf("Opção invalida!\n");
     }
+
+    } while (opcao != 0);
 
 return 0;
 }
